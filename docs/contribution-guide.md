@@ -1,12 +1,12 @@
 # Contribution Guide
 
 ## Branch Naming Convention
-story/dev-name/<story-name>
-bugfix/dev-name/<short-description>
+dev-name/<storyid>-<story-name>
+dev-name/ecom-2-<short-description>
 
 Examples:
-- story/sadeq/user-auth
-- bugfix/sadeq/product-api
+- sadeq/ecom-2-user-auth
+- sadeq/ecom-3-product-api
 
 ---
 
