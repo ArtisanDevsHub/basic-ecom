@@ -1,4 +1,4 @@
-# MERN E-Commerce — Real-World Software Engineering Project
+# MERN E-Commerce — Simulation of Real-World Software Engineering Project
 
 This project is designed to simulate **professional software development** from start to finish:
 - Requirements gathering
