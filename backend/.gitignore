@@ -1,0 +1,13 @@
+# node_module
+node_modules/
+
+# environment variable
+.env
+
+#other file folder
+controller
+middleware
+model
+routes
+utilities
+
