@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 const cors = require("cors");
-const { mongooseConnect } = require("./dbConnection/db");
+const { mongooseConnect } = require("./src/config/dbConnection/db");
 // const session = require("express-session");
 
 const port = 3000;

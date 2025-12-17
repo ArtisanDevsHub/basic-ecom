@@ -5,9 +5,5 @@ node_modules/
 .env
 
 #other file folder
-controller
-middleware
-model
-routes
-utilities
+
 
