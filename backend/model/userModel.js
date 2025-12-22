@@ -24,11 +24,10 @@ const userSchema = new Schema({
 });
 
 // before password save database is not modified then next
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return ;
 // encrypt the password using bcrypt on the function encryptpassword
-  this.password = await encryptPassword(this.password)
-  next();
+  this.password = await encryptPassword(this.password);
 });
 
 const userModel = mongoose.model("e-comUser", userSchema);

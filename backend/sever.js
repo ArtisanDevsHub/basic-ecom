@@ -4,7 +4,7 @@ const app = express();
 
 const cors = require("cors");
 const { mongooseConnect } = require("./src/config/dbConnection/db");
-// const session = require("express-session");
+const authRoutes = require("./src/routes/userRoutes")
 
 const port = 3000;
 
@@ -24,6 +24,8 @@ app.get("/api/message", (req, res) => {
   res.json({ text: "Backend connected successfully!" });
 });
 
+// AUTH ROUTES
+app.use("/api/auth", authRoutes);
 
 app.listen(port, () => {
   console.log(`Server has started on port ${port} `);
