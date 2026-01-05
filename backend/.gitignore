@@ -2,7 +2,7 @@
 node_modules/
 
 # environment variable
-.env
+backend/.env
 
 #other file folder
 
