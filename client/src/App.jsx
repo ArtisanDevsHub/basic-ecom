@@ -1,28 +1,16 @@
-import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React from 'react'
+import Login from './pages/Login'
+import {Routes,Route} from "react-router-dom"
 
-export default function App() {
-
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    const fetchNote = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/api/message", {
-          withCredentials: true, // required if you use cookies/sessions
-        });
-        setMessage(res.data.text);
-      } catch (err) {
-        console.error("Error loading data:", err);
-      }
-    };
-    fetchNote();
-  }, []);
-
+const App = () => {
   return (
     <div>
-      <h1>{message}</h1>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+      </Routes>
+
     </div>
-  );
+  )
 }
+
+export default App

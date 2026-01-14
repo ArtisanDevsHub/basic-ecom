@@ -5,6 +5,12 @@ const userModel = require('../models/userModel')
 
 
 // Route for user login
+const createToken = (id) => {
+    return jwt.sign({id},process.env.JWT_SECRET_KYE)
+
+}
+
+
  const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -42,10 +48,7 @@ const userModel = require('../models/userModel')
 };
 
 
-const createToken = (id) => {
-    return jwt.sign({id},process.env.JWT_SECRET_KYE)
 
-}
 
 module.exports = {loginUser}
 
