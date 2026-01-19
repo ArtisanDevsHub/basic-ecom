@@ -2,54 +2,40 @@ const userModel = require("../model/userModel");
 
 const signupComplete = async (req, res) => {
   try {
-    const { username, email,  password, confirmPassword } = req.body;
+    const { username, email, password, confirmPassword } = req.body;
 
-    let existingUsername = await userModel.findOne({ username });
-    if (existingUsername) {
-      return res
-        .status(400)
-        .send("This username already taken , please enter unique username!");
+    // username check
+    if (await userModel.findOne({ username })) {
+      return res.status(400).send("Username already taken");
     }
 
-    let existingUserEmail = await userModel.findOne({ email });
-    if (existingUserEmail) {
-      return res
-        .status(400)
-        .send(
-          "This email already has been stored in database,  please enter unique email address."
-        );
+    // email check
+    if (await userModel.findOne({ email })) {
+      return res.status(400).send("Email already exists");
     }
 
-    // 1. Confirm password check
+    // password match
     if (password !== confirmPassword) {
-      return res
-        .status(400)
-        .send("Password and Confirm Password do not match!");
+      return res.status(400).send("Passwords do not match");
     }
 
-    let user = new userModel(req.body);
-
-
-    // req.session.user = user;
-    await user.save();
+    // create user
+    const user = await userModel.create(req.body);
 
     return res.status(201).json({
       message: "User registered successfully",
     });
   } catch (err) {
-  console.error(err); // IMPORTANT
+    if (err.code === 11000) {
+      return res.status(400).send("Duplicate field value");
+    }
 
-  if (err.code === 11000) {
-    return res.status(400).send("Duplicate field value");
+    if (err.name === "ValidationError") {
+      return res.status(400).send(err.message);
+    }
+
+    return res.status(500).send("Server Error!");
   }
-
-  if (err.name === "ValidationError") {
-    return res.status(400).send(err.message);
-  }
-
-  return res.status(500).send("Server Error!");
-}
-
 };
 
 module.exports = {

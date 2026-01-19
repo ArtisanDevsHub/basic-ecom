@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 function UserSignup() {
   const navigate = useNavigate();
 
-  const [form, setForm] = useState("");
+  const [form, setForm] = useState({});
   const [error, setError] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,18 +17,16 @@ function UserSignup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/auth/signup",
-        form,
-        { withCredentials: true }
-      );
+      const res = await axios.post(`${API_URL}/users/signup`, form, {
+        withCredentials: true,
+      });
 
       if (res.status === 201) {
         alert("Signup successful!");
         navigate("/");
       }
     } catch (err) {
-      setError(err.message || "Signup failed!");
+      setError(err.response?.data?.message || "Signup failed!");
     }
   };
 

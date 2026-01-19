@@ -19,7 +19,7 @@ const userSchema = new Schema({
    role: {
     type: String,
     enum: ["user", "admin"],
-    default: "user", // all new users are normal users
+    default: "admin", // all new users are normal users
   },
 });
 
@@ -30,5 +30,5 @@ userSchema.pre("save", async function () {
   this.password = await encryptPassword(this.password);
 });
 
-const userModel = mongoose.model("e-comUser", userSchema);
+const userModel = mongoose.model("user", userSchema);
 module.exports = userModel;

@@ -12,9 +12,6 @@ function Home() {
       .then((res) => {
         setMessage(res.data.text);
       })
-      .catch((err) => {
-        console.log("Error:", err);
-      });
   }, []);
   return (
     <div className="p-6">
