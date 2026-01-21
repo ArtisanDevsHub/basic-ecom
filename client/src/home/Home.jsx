@@ -23,6 +23,9 @@ function Home() {
       <a href="/signup" className="text-white  bg-black p-2  ">
         Signup
       </a>
+      <a href="/addCategory" className="text-white ms-4  bg-black p-2  ">
+        Add Category
+      </a>
     </div>
   );
 }
