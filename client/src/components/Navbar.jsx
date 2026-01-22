@@ -1,17 +1,16 @@
 import { Bell, Search, Settings, User } from "lucide-react";
+import logo from "../assets/Logo.png";
 
 const AdminNavbar = () => {
   return (
-    <header className="w-full h-16 flex items-center justify-between px-6 bg-[#d7e7eb]">
-
+    <header className="w-full h-16 flex items-center justify-between px-10 bg-[#d7e7eb]">
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">
-          B
-        </div>
-        <span className="text-lg font-semibold text-red-500">
-          BAYBE
-        </span>
+        <img
+          src={logo}
+          alt="BAYBE Logo"
+          className="h-8 w-auto object-contain"
+        />
       </div>
 
       {/* Right Section */}

@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 
 const AdminLayout = () => {
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-100">
+    <div className="w-full h-screen  flex flex-col bg-gray-100">
       {/* Navbar - FULL WIDTH */}
       <Navbar />
 
