@@ -44,7 +44,7 @@ const Login = () => {
 
         {/* Title */}
         <h2 className="text-xl flex justify-start font-semibold text-gray-800 mb-6">
-          Login into Logoipsum
+          Login into Baby Shop
         </h2>
         <hr className = "bg-gray-300"/>
 
@@ -76,10 +76,10 @@ const Login = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="flex items-center text-left">
+          {/* <div className="flex items-center text-left">
             <input type="checkbox" className="mr-2" />
             <p className="text-sm">I accept the Terms or Conditions</p>
-          </div>
+          </div> */}
 
           {/* Button */}
           <button
