@@ -30,5 +30,6 @@ userSchema.pre("save", async function () {
   this.password = await encryptPassword(this.password);
 });
 
-const userModel = mongoose.model("user", userSchema);
-module.exports = userModel;
+//const userModel = mongoose.model("user", userSchema);
+const User = mongoose.models.user || mongoose.model("user", userSchema);
+module.exports = User;
