@@ -1,5 +1,5 @@
-const userRoute = require("./userRoutes");
+const signupRoute = require("./userRoutes");
 
 module.exports = (app) => {
-  app.use("/users", userRoute);
+  app.use("/users", signupRoute);
 };

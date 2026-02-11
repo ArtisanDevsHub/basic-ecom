@@ -5,18 +5,17 @@ const cors = require("cors");
 const { mongooseConnect } = require("./src/config/dbConnection/db");
 
 
-const port = 3000;
+const PORT = process.env.PORT;
 
 mongooseConnect();
 
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
 app.use(express.json());
-
 
 
 app.get("/api/message", (req, res) => {
@@ -26,6 +25,6 @@ app.get("/api/message", (req, res) => {
 // Auth Routes
 require('./src/routes')(app)
 
-app.listen(port, () => {
-  console.log(`Server has started on port ${port} `);
+app.listen(PORT, () => {
+  console.log(`Server has started on port ${PORT} `);
 });

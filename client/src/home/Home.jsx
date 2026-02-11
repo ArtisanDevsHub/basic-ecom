@@ -15,7 +15,7 @@ function Home() {
   }, []);
   return (
     <div className="p-6">
-      <p className="text-2xl font-bold mb-4">{message} </p>
+      <p className="text-2xl font-bold mb-4">{message}</p>
 
       <a href="/signup" className="text-white  bg-black p-2  ">
         Signup

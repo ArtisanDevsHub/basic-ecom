@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./home/Home";
-import UserSignup from "./user-signup/UserSignup";
+import UserSignup from "./pages/UserSignup";
 import {  Routes, Route } from "react-router-dom";
 
 export default function App() {

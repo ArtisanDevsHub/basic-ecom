@@ -1,5 +1,5 @@
 const { Schema, default: mongoose } = require("mongoose");
-const { encryptPassword } = require('../utilities/passwordEncrypt')
+const { encryptPassword } = require('../../utilities/passwordEncrypt')
 
 const userSchema = new Schema({
   username: { type: String,  unique: true, required: true },
