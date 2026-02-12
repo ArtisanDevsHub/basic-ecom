@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./home/Home";
-import UserSignup from "./user-signup/UserSignup";
-import AddCategory from "./create-category/CreateCategory";
+import UserSignup from "./pages/UserSignup";
+import AddCategory from "./pages/CreateCategory";
 import AdminLayout from "./layouts/AdminLayout";
 
 export default function App() {

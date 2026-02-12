@@ -1,11 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const categoryController = require("../../controller/categoryController");
+const { createCategory } = require('../controller/categoryController');
+const upload = require('../middleware/uploadMiddleware');
 
-// create category
-router.post("/create", categoryController.createCategory);
-
-// get categories
-router.get("/", categoryController.getCategories);
+router.post('/create', upload, createCategory); // Use upload middleware
 
 module.exports = router;

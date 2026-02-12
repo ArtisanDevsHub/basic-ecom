@@ -7,7 +7,7 @@ function UserSignup() {
 
   const [form, setForm] = useState("");
   const [error, setError] = useState("");
-
+  const API_URL = import.meta.env.VITE_API_URL;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -17,9 +17,9 @@ function UserSignup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/signup",
+        `${API_URL}/users/signup`,
         form,
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       if (res.status === 201) {
