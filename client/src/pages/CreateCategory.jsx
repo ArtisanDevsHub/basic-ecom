@@ -67,7 +67,7 @@ const AddCategory = () => {
         navigate("/");
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       alert(error.response?.data?.message || "Failed to save category");
     }
   };
@@ -82,6 +82,7 @@ const AddCategory = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-6xl mx-auto">
+
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">Add/Edit Category</h2>
@@ -165,7 +166,7 @@ const AddCategory = () => {
                     onChange={(e) => setParent(e.target.value)}
                     className="w-full border rounded-lg px-4 py-2 bg-white outline-none"
                   >
-                    <option value="">None (Top Level)</option>
+                    <option value="">Select</option>
                     <option value="Electronics">Electronics</option>
                     <option value="Fashion">Fashion</option>
                     <option value="Accessories">Accessories</option>
@@ -183,7 +184,6 @@ const AddCategory = () => {
               </div>
             </div>
 
-           
           </div>
 
           {/* Sidebar: Status & Metadata */}

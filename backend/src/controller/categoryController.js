@@ -1,9 +1,6 @@
 const Category = require('../model/CategoryModel');
 const asyncHandler = require('express-async-handler');
 
-// @desc    Create a new category
-// @route   POST /api/category/create
-// @access  Public
 const createCategory = asyncHandler(async (req, res) => {
   const { name, parent, status } = req.body;
 
