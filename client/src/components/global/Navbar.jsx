@@ -1,9 +1,30 @@
+
+import { useEffect } from "react";
 import { Bell, Search, Settings, User } from "lucide-react";
-import logo from "../assets/Logo.png";
+import logo from "../../assets/Logo.png";
 
 const AdminNavbar = () => {
+  useEffect(() => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add("shadow-md");
+      } else {
+        navbar.classList.remove("shadow-md");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full h-16 flex items-center justify-between px-10 bg-[#d7e7eb]">
+    <header
+      id="navbar"
+      className="w-full h-16 flex items-center justify-between px-10 bg-[#d7e7eb] transition-shadow duration-200"
+    >
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
         <img
@@ -46,3 +67,5 @@ const AdminNavbar = () => {
 };
 
 export default AdminNavbar;
+
+

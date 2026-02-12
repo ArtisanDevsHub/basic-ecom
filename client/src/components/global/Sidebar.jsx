@@ -22,42 +22,42 @@ const Sidebar = () => {
 
       <nav className="space-y-1">
         <NavLink to="/admin" end className={linkClass}>
-          <LayoutGrid size={18} />
+          <LayoutGrid size={20} />
           Overview
         </NavLink>
 
         <NavLink to="/admin/categories" className={linkClass}>
-          <FileText size={18} />
+          <FileText size={20} />
           Category List
         </NavLink>
 
         <NavLink to="/admin/add-category" className={linkClass}>
-          <PlusSquare size={18} />
+          <PlusSquare size={20} />
           Add New Category
         </NavLink>
 
         <NavLink to="/admin/products" className={linkClass}>
-          <ShoppingBag size={18} />
+          <ShoppingBag size={20} />
           Products Lists
         </NavLink>
 
         <NavLink to="/admin/product-details" className={linkClass}>
-          <FileText size={18} />
+          <FileText size={20} />
           Products Details
         </NavLink>
 
         <NavLink to="/admin/add-product" className={linkClass}>
-          <PlusSquare size={18} />
+          <PlusSquare size={20} />
           Add New Products
         </NavLink>
 
         <NavLink to="/admin/messages" className={linkClass}>
-          <MessageSquare size={18} />
+          <MessageSquare size={20} />
           Messages
         </NavLink>
 
         <NavLink to="/admin/reports" className={linkClass}>
-          <BarChart2 size={18} />
+          <BarChart2 size={20} />
           Report Center
         </NavLink>
       </nav>
@@ -67,12 +67,12 @@ const Sidebar = () => {
 
       <nav className="space-y-1">
         <NavLink to="/admin/users" className={linkClass}>
-          <Users size={18} />
+          <Users size={20} />
           Users
         </NavLink>
 
         <NavLink to="/admin/product-category" className={linkClass}>
-          <Settings size={18} />
+          <Settings size={20} />
           Products Category
         </NavLink>
       </nav>
