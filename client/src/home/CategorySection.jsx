@@ -1,13 +1,19 @@
 import React from 'react';
+import imgNew from '../assets/category/Ellipse 1 (1).png';
+import imgToy from '../assets/category/Ellipse 1 (2).png';
+import imgClothing from '../assets/category/Ellipse 1 (3).png';
+import imgBibs from '../assets/category/Ellipse 1 (4).png';
+import imgNew2 from '../assets/category/Ellipse 1 (5).png';
+import imgNew3 from '../assets/category/Ellipse 1.png';
 
 const CategorySection = () => {
   const categories = [
-    { name: "New", image: "/category-new.jpg" },
-    { name: "Baby Toy", image: "/category-toy.jpg" },
-    { name: "Baby Clothing", image: "/category-clothing.jpg" },
-    { name: "Cute bibs", image: "/category-bibs.jpg" },
-    { name: "New", image: "/category-new2.jpg" },
-    { name: "New", image: "/category-new3.jpg" },
+    { name: "New", image: imgNew},
+    { name: "Baby Toy", image: imgToy },
+    { name: "Baby Clothing", image: imgClothing },
+    { name: "Cute bibs", image: imgBibs },
+    { name: "New", image: imgNew2 },
+    { name: "New", image: imgNew3 },
   ];
 
   return (

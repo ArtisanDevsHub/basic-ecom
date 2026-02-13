@@ -4,7 +4,7 @@ import AdminLayout from "./layouts/AdminLayout";
 
 // Pages
 import Home from "./components/global/Home";
-import CategoryHomePage from "./pages/CategoryHomePage";
+import HomeNewArrivals from "./home/NewArrivals";
 import UserSignup from "./pages/UserSignup";
 import AddCategory from "./pages/CreateCategory";
 
@@ -14,9 +14,9 @@ export default function App() {
       <Routes>
           <Route path="/" element={<Home />} />
           
-        {/* Public Routes with MainLayout (Navbar + Sidebar + Footer) */}
+       
         <Route element={<MainLayout />}>
-          <Route path="/categories" element={<CategoryHomePage />} />
+          <Route path="/categories" element={<HomeNewArrivals />} />
         </Route>
 
         {/* Standalone Pages (No Layout) */}

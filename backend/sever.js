@@ -1,8 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-
+const path = require("path");
 const cors = require("cors");
+
+
+
+
+
+
 const { mongooseConnect } = require("./src/config/dbConnection/db");
 
 
@@ -24,11 +30,17 @@ app.get("/api/message", (req, res) => {
   res.json({ text: "Backend connected successfully!" });
 });
 
-
-
 // Auth Routes
 require('./src/routes')(app)
+
+// Serve static /uploads path:
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+const  errorHandler  = require("./src/middleware/errorMiddleware");
+app.use(errorHandler);
+
 
 app.listen(port, () => {
   console.log(`Server has started on port ${port} `);
 });
+
