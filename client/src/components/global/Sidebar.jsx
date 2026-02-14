@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   LayoutGrid,
   FileText,
@@ -8,9 +9,18 @@ import {
   BarChart2,
   Users,
   Settings,
+  LogOut ,
 } from "lucide-react";
 
 const Sidebar = () => {
+const navigate = useNavigate();
+
+const handleLogout = () => {
+  localStorage.removeItem("authToken"); // ✅ Clear token
+  navigate("/login");                   // ✅ Redirect to login page
+};
+
+
   const linkClass = ({ isActive }) =>
     `flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition
      ${isActive ? "bg-red-400 text-white" : "text-gray-700 hover:bg-gray-100"}`;
@@ -75,6 +85,13 @@ const Sidebar = () => {
           <Settings size={20} />
           Products Category
         </NavLink>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-red-500 hover:bg-red-100 transition w-full"
+        >
+          <LogOut size={18} />
+          Logout
+        </button>
       </nav>
     </aside>
   );
